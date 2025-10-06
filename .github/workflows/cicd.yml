@@ -47,11 +47,11 @@ jobs:
       - name: Log in Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: scrupulus
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/demodevops:latest .
+        run: docker build -t scrupulus/demodevops:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/demodevops:latest
+        run: docker push scrupulus/demodevops:latest
